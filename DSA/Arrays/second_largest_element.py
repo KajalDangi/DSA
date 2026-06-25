@@ -36,7 +36,7 @@ def secondLargestElement(nums):
 # Space:
 # --------------------------
 
-# code
+
 
 # --------------------------
 if  __name__ == "__main__":

@@ -1,11 +1,11 @@
 # Given an array of integers nums, return the largest element.
 
-# --------------------------
+# ---------------------------
 # Approach 1: Sorting
 # Time: O(n log n)
 # Space: O(n)
 # Better
-# --------------------------
+# ---------------------------
 
 def largestElement(nums):
     sort_num = sorted(nums)
@@ -13,23 +13,23 @@ def largestElement(nums):
 
 
 
-# --------------------------
+# ---------------------------
 # Approach 2: max() Function
 # Time: O(n)
 # Space: O(1)
 # Library Function
-# --------------------------
+# ---------------------------
 def largestElement(nums):
     return max(nums)
 
 
 
-# --------------------------
+# ---------------------------
 # Approach 3: Linear Scan
 # Time: O(n)
 # Space: O(1)
 # Optimal
-# --------------------------
+# ---------------------------
 def largestElement(nums):
     largest = nums[0]
     for num in nums:
@@ -39,7 +39,7 @@ def largestElement(nums):
 
 
 
-# --------------------------
+# ---------------------------
 if __name__ == "__main__":
     nums = [3, 3, 6, 1]
     print(largestElement(nums))   # Output: 6
