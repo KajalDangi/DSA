@@ -1,53 +1,73 @@
-#Given an integer array of size n containing distinct values in the range from 0 to n (inclusive),
-# return the only number missing from the array within this range.
+"""
+Missing Number
+
+Given an integer array nums containing n distinct numbers
+in the range [0, n], return the only number missing from
+the array.
+
+Example:
+Input : [0, 2, 3, 1, 4]
+Output: 5
+"""
 
 
-# --------------------------
-# Approach 1: Infinit Looping
-# Time: O(n²)
-# Space: O(1)
-# Brute
-# --------------------------
-def missingNumber(nums):
-    i = 0
-    while True:
-        if i not in nums:
-            return i
-        else:
-            i += 1
+# ============================================================
+
+# Approach 1: Brute Force
+# Time Complexity : O(n²)
+# Space Complexity: O(1)
+
+# ============================================================
+
+def missing_number_brute(nums):
+     candidate = 0
+     while True:
+         if candidate not in nums:
+             return candidate
+
+         candidate += 1
 
 
 
-# --------------------------
-# Approach 2: Hashing / Set
-# Time:O(n)
-# Space:O(n)
-# Better
-# --------------------------
-def missingNumber(nums):
-    s = set(nums)
+# ============================================================
 
-    for x in range(len(nums) + 1):
-        if x not in s:
-            return x
+# Approach 2: Hash Set
+# Time Complexity : O(n)
+# Space Complexity: O(n)
 
+# ============================================================
 
-# --------------------------
-# Approach 3: Summation
-# Time: O(n)
-# Space: O(1)
-# Optimal
-# --------------------------
-def missingNumber(nums):
+def missing_number_better(nums):
+     values = set(nums)
+     for number in range(len(nums) + 1):
+         if number not in values:
+             return number
+
+# ============================================================
+
+# Approach 3: Summation Formula
+# Time Complexity : O(n)
+# Space Complexity: O(1)
+
+# ============================================================
+
+def missing_number_optimal(nums):
     n = len(nums)
-    return (n*(n+1))//2 -sum(nums)
+    expected_sum = n * (n + 1) // 2
+    actual_sum = sum(nums)
+    return expected_sum - actual_sum
 
 
-
-# --------------------------
-
+# ============================================================
+# Driver Code
+# ============================================================
 
 if __name__ == "__main__":
     nums = [0, 2, 3, 1, 4]
-    print(missingNumber(nums))
-    # Output : 5
+    print("Brute Force :", missing_number_brute(nums))
+    print("Better      :", missing_number_better(nums))
+    print("Optimal     :", missing_number_optimal(nums))
+
+
+
+
