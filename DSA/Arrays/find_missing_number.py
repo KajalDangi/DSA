@@ -57,6 +57,24 @@ def missing_number_optimal(nums):
     actual_sum = sum(nums)
     return expected_sum - actual_sum
 
+# ============================================================
+
+# Approach 3: XOR
+# Time Complexity : O(n)
+# Space Complexity: O(1)
+
+# ============================================================
+
+def missing_number_xor(nums):
+        n = len(nums)
+        xor1 = 0
+        xor2 = 0
+        for i in range(n + 1):
+            xor1 = xor1 ^ i
+        for num in nums:
+            xor2 = xor2 ^ num
+
+        return xor1 ^ xor2
 
 # ============================================================
 # Driver Code
@@ -67,6 +85,7 @@ if __name__ == "__main__":
     print("Brute Force :", missing_number_brute(nums))
     print("Better      :", missing_number_better(nums))
     print("Optimal     :", missing_number_optimal(nums))
+    print("XOR         :", missing_number_xor(nums))
 
 
 

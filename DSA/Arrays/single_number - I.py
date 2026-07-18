@@ -52,7 +52,12 @@ def single_number_better(nums):
 # ============================================================
 
 def single_number_optimal(nums):
-          return 0
+    ans = 0
+
+    for num in nums:
+        ans ^= num
+
+    return ans
 
 
 # ============================================================
